@@ -13,7 +13,16 @@
 
 
 % Glossary
-\usepackage{glossaries}
+\usepackage[numberedsection=nameref]{glossaries}
+\renewcommand{\glossarypreamble}{\label{glos}}
+\makeglossaries
+\newglossaryentry{ai} {
+    name = artificial intelligence,
+    description = {Artificial intelligence (AI) covers the broad discipline in computer science
+that is concerned with replicating intelligent behaviour in computational systems. The exact
+definition is controversial for historical reasons \autocite{Nilsson2009}.
+}
+}
 \newglossaryentry{consciousness} {
     name = consciousness,
     description = {Consciousness pertains to the feeling of being alive and attentive.
@@ -148,20 +157,46 @@ techniques led \textcite{atkinson2000} to call for more detailed theories
 that identifies \textit{neural correlates of consciousness (\gls{ncc})}
 \autocite{atkinson2000}. That call was answered by a plethora of theories
 that attempted to infer frameworks, on which novel understandings of
-consciousness could be based.\footnote{There are far too many papers
-to list in this essay, but to just mention a few influential papers, see 
-\cite{baars2005, block2007, crick2003, damasio2003, dehaene2001, kouider2010, Tononi2004, zeki2008, sep-consciousness, schmidhuber2014, Nilsson2009}.
+consciousness could be based.\footnote{There are far too many relevant
+and interesting papers to list here, but to just mention a few influential examples,
+see \cite{baars2005, block2007, crick2003, damasio2003, dehaene2001, kouider2010, Tononi2004, zeki2008, sep-consciousness, schmidhuber2014, Nilsson2009}.
 }
 
-Simultaneously to the advances in neuroscience, \gls{computation}al theory
-increased its efforts within \gls{AI} (AI) \autocite{Nilsson2009}, and
+Simultaneous to the advances in neuroscience, \gls{computation}al theory
+increased its efforts within \gls{ai} (AI) \autocite{Nilsson2009}, and has
 matured to a point where many of the neurophysiological properties can be
-replicated in silicon \autocite{Tononi2004, schmidhuber2014}.\footnote{Other
+replicated in silicon \autocite{Tononi2004, schmidhuber2014, walter2015}.\footnote{Other
 technologies show promising advances in forming computational substrates such
-as  \href{https://en.wikipedia.org/wiki/DNA_computing}{molecular biology}
+as \href{https://en.wikipedia.org/wiki/DNA_computing}{molecular biology}
 and \href{https://en.wikipedia.org/wiki/Quantum_computing}{quantum computing},
 but have yet to reach the complexity of digital electronic computers.}
+The computational prowess of modern digital systems has been shown to grow
+with a staggering exponential speed \autocite{Moore1965} - - a development that has proven to
+hold since 1965 and that shows no intention of halting
+\autocite{Moravec98,kurzweil2001}. If the complexity of the brain can be 
+assumed to be finite, this growth will inevitably catch up with the biological
+equivalent.\footnote{This is arguably already the case as demonstrated in this
+piece of software that simulates an entire worm of the species C.elegans:
+\url{http://openworm.org}. Although the worm does not possess advanced cognitive
+abilities, this is a proof that biological organisms are not outside the reach
+of silicon wafers.}
 
+This last point is important because it tells us that computations can
+drastically aid the understanding of consciousness, provided that the
+paradigm of neuroscience and computer science find common footing through
+\gls{ncc}s. Such a denominator is required because the very definition of
+computation depends on a formally defined input before any meaningful output
+can be given \autocite{Nilsson2009, schmidhuber2014} (see also glossary on
+page \pageref{glos}).
+
+Despite the extensive research into \gls{ncc} there is of yet not 'smoking gun'
+proving the exact link to consciousness \autocite{sep-consciousness, Hohwy2009, dennett2017}.
+
+
+
+A raw and unguided tour de force into AI void of any form of human consciousness or
+ethics is hardly desirable, and, putting the moral existential and moral dilemmas aside,
+these advancements further stresses the search for \gls{ncc}s.
 
 \autocite{dennett2017}.
 
@@ -171,7 +206,7 @@ how come
 disclaimer:
 idea that covers many complicated concepts \autocite{sep-consciousness}. In this essay
 consciousness will exclusively relate to the \textit{hard} problem of inner experience as
-coined by \cite{chalmers1995}, also known as phenomenological consciousness.}
+coined by \cite{chalmers1995}, also known as phenomenological consciousness.
 \section{Vectors and dimensionality}
 
 \section{Alternative approaches}
@@ -189,9 +224,7 @@ frameworks \autocite{block2007,kouider2010} or
 
 \clearpage
 
-\printglossary[type=\acronymtype]
-
-\printglossary
+\printglossary[Glossary]
 
 \printbibliography
 
