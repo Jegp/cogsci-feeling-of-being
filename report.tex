@@ -4,6 +4,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage{wallpaper}
 \usepackage{palatino}
+\usepackage{hyperref}
 \usepackage{csquotes}
 % Bibliography
 \usepackage[style=authoryear]{biblatex}
@@ -13,13 +14,22 @@
 
 % Glossary
 \usepackage{glossaries}
+\newglossaryentry{consciousness} {
+    name = consciousness,
+    description = {Consciousness pertains to the feeling of being alive and attentive.
+This circular definition covers over the fact that consciousness is an old and multifaceted
+idea that covers many complicated concepts \autocite{sep-consciousness}. In this essay
+consciousness will exclusively relate to the \textit{hard} problem of inner experience as
+coined by \cite{chalmers1995}, also known as phenomenological consciousness.}
+}
 \newglossaryentry{top-down} {
     name = top-down,
     description = {This essay employs top-down as a higher-order approach to a solution
 or approach to a problem. An example of a top-down approach to understanding
 consciousness is the global workspace theory by \autocite{baars2005} or the framework presented
 by Francis Crick and Christof Koch \autocite{crick2003}. While both contain elements of 
-neurobiology (\gls{bottom-up}) they are explicitly trying to explain and evaluate consciousness}
+neurobiology (\gls{bottom-up}) they are explicitly trying to offer an explanation on
+what consciousness is.}
 }
 \newglossaryentry{bottom-up} {
     name = bottom-up,
@@ -27,6 +37,17 @@ neurobiology (\gls{bottom-up}) they are explicitly trying to explain and evaluat
 many smaller concepts to form a greater whole. This approach is typical for the natural
 sciences. An example of such a bottom-up approach to understanding consciousness is Tononi's
 idea of an information integration measure \autocite{Tononi2004}}
+}
+\newglossaryentry{computation} {
+   name = computation,
+   description = {Computation refers to any process (in any
+substrate) that can deduce new information based on old information. In
+this is manifested as computing instructions.}
+}
+\newglossaryentry{ncc} {
+   name = {NCC},
+   description = {Neural patterns or constructions that somehow correlate with consciousness.
+See \autocite{atkinson2000}.}
 }
 \makeglossaries
 % Setup captions
@@ -100,6 +121,46 @@ idea of an information integration measure \autocite{Tononi2004}}
 %%  End title page
 
 \chapter{Introduction}
+\Gls{consciousness} remains an elusive concept despite extensive scrutiny
+from many traditions \autocite{sep-consciousness}. Philosophy of mind,
+neuroscience, psychology and - recently - computer science have been
+prodding the concept from a plenitude of angles.
+\footnote{The Stanford Encyclopedia of Philosophy offers an overview of
+many of the disciplines and approaches involved in the quest to explain
+\gls{consciousness} so far \autocite{sep-consciousness}.}
+This endeavour is paramount to understanding the human condition, but
+raises unavoidable and highly intricate existential questions
+\autocite{amodei2016, soares2016}.
+
+
+Since the 19th century developments within neuroscience are rapidly
+increasing our understanding of the cognitive processes that partake in
+the construction of \gls{consciousness} \autocite{atkinson2000}.\footnote{
+Some philosophers require consciousness
+to include metaphysical properties \autocite{sep-consciousness} (dualism).
+This essay eludes the question by
+focusing on falsifiable and positivistic theories, in the hope that
+they can bring us closer to the truth - whether that entails dualism
+or reductionism.}
+
+The advances and sheer amount of details neuroscience and neuroimaging
+techniques led \textcite{atkinson2000} to call for more detailed theories
+that identifies \textit{neural correlates of consciousness (\gls{ncc})}
+\autocite{atkinson2000}. That call was answered by a plethora of theories
+that attempted to infer frameworks, on which novel understandings of
+consciousness could be based.\footnote{There are far too many papers
+to list in this essay, but to just mention a few influential papers, see 
+\cite{baars2005, block2007, crick2003, damasio2003, dehaene2001, kouider2010, Tononi2004, zeki2008, sep-consciousness, schmidhuber2014, Nilsson2009}.
+}
+
+Simultaneously to the advances in neuroscience, \gls{computation}al theory
+increased its efforts within \gls{AI} (AI) \autocite{Nilsson2009}, and
+matured to a point where many of the neurophysiological properties can be
+replicated in silicon \autocite{Tononi2004, schmidhuber2014}.\footnote{Other
+technologies show promising advances in forming computational substrates such
+as  \href{https://en.wikipedia.org/wiki/DNA_computing}{molecular biology}
+and \href{https://en.wikipedia.org/wiki/Quantum_computing}{quantum computing},
+but have yet to reach the complexity of digital electronic computers.}
 
 
 \autocite{dennett2017}.
@@ -107,15 +168,13 @@ idea of an information integration measure \autocite{Tononi2004}}
 what for
 how come
 
+disclaimer:
+idea that covers many complicated concepts \autocite{sep-consciousness}. In this essay
+consciousness will exclusively relate to the \textit{hard} problem of inner experience as
+coined by \cite{chalmers1995}, also known as phenomenological consciousness.}
 \section{Vectors and dimensionality}
 
 \section{Alternative approaches}
-Consciousness remains an elusive concept despite extensive scrutiny
-from many traditions \autocite{sep-consciousness}. Philosophy of mind,
-neuroscience, psychology and - recently - computer science have been
-prodding the concept from a plenitude of angles.
-\footnote{Just to name a few, see \autocite{block2007, sep-consciousness, schmidhuber2014,
-Nilsson2009}.}
 Common for each contribution is a fundamental desire to deepen the
 understanding of both consciousness as a concept, and the principles
 partaking in the creation of the concept. 
@@ -130,7 +189,9 @@ frameworks \autocite{block2007,kouider2010} or
 
 \clearpage
 
-\printglossaries
+\printglossary[type=\acronymtype]
+
+\printglossary
 
 \printbibliography
 
