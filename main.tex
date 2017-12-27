@@ -4,7 +4,31 @@
 \usepackage[utf8]{inputenc}
 \usepackage{wallpaper}
 \usepackage{palatino}
+\usepackage{csquotes}
+% Bibliography
+\usepackage[style=authoryear]{biblatex}
+\addbibresource{bib.bib}
+\bibliography{bib}
 
+
+% Glossary
+\usepackage{glossaries}
+\newglossaryentry{top-down} {
+    name = top-down,
+    description = {This essay employs top-down as a higher-order approach to a solution
+or approach to a problem. An example of a top-down approach to understanding
+consciousness is the global workspace theory by \autocite{baars2005} or the framework presented
+by Francis Crick and Christof Koch \autocite{crick2003}. While both contain elements of 
+neurobiology (\gls{bottom-up}) they are explicitly trying to explain and evaluate consciousness}
+}
+\newglossaryentry{bottom-up} {
+    name = bottom-up,
+    description = {Bottom-up approaches in this article refer to the combination of
+many smaller concepts to form a greater whole. This approach is typical for the natural
+sciences. An example of such a bottom-up approach to understanding consciousness is Tononi's
+idea of an information integration measure \autocite{Tononi2004}}
+}
+\makeglossaries
 % Setup captions
 %\captionstyle[\centering]{\centering}
 %\changecaptionwidth
@@ -46,26 +70,28 @@
 %%  Begin document
 %%  ==================================================================
 \begin{document}
-
 %%  Begin title page
 %%  ==================================================================
     \thispagestyle{empty}
-    \ULCornerWallPaper{1}{ku-coverpage/nat-farve.pdf}
-    \ULCornerWallPaper{1}{ku-coverpage/nat-en.pdf}
+    \ULCornerWallPaper{1}{ku-coverpage/samf-farve.pdf}
+    \ULCornerWallPaper{1}{ku-coverpage/samf-en.pdf}
     \begin{adjustwidth}{-3cm}{-1.5cm}
     \vspace*{-1cm}
-    \textbf{\Huge Type of Thesis} \\
+    \textbf{\Huge Feeling of being} \\
     \vspace*{2.5cm} \\
-    \textbf{\Huge Title} \\
+    \textbf{\Huge Dimensionality of consciousness} \\
     \vspace*{.1cm} \\
-    {\huge Subtitle} \\
+    {\huge On measuring experience} \\
     \begin{tabbing}
     % adjust the hspace below for the longest author name
-    First Author \hspace{1cm} \= \texttt{<first@author.com>} \\
-    Second Author \> \texttt{<second@author.com>} \\
-    \\[12cm]
+    Jens Egholm Pedersen \hspace{1cm} \= \texttt{<xtp778@alumni.ku.dk>} \\
+    \\[2cm]
+    \textbf{\Large Abstract} \\
+    Modern developments ...
+    \\[6cm]
+
     \textbf{\Large Supervisor} \\
-    Super Visor \> \texttt{<super@visor.com>} \\
+    Claudia Carrara-Augustenborg \hspace{1cm} \texttt{<claudia.augustenborg@psy.ku.dk>} \\
     \end{tabbing}
     \end{adjustwidth}
     \newpage
@@ -73,6 +99,41 @@
 %%  ==================================================================
 %%  End title page
 
+\chapter{Introduction}
+
+
+\autocite{dennett2017}.
+
+what for
+how come
+
+\section{Vectors and dimensionality}
+
+\section{Alternative approaches}
+Consciousness remains an elusive concept despite extensive scrutiny
+from many traditions \autocite{sep-consciousness}. Philosophy of mind,
+neuroscience, psychology and - recently - computer science have been
+prodding the concept from a plenitude of angles.
+\footnote{Just to name a few, see \autocite{block2007, sep-consciousness, schmidhuber2014,
+Nilsson2009}.}
+Common for each contribution is a fundamental desire to deepen the
+understanding of both consciousness as a concept, and the principles
+partaking in the creation of the concept. 
+Guided by years of academic training and tradition, each discipline have
+approached this \gls{top-down} by, in abstract terms, describing 
+or \gls{bottom-up} \autocite{sep-consciousness},
+: either constructing abstract
+frameworks \autocite{block2007,kouider2010} or 
+
+\gls{top-down} \textit{and} \gls{bottom-up} \autocite{dehaene2001, baars2005}
+\section{Convergent theory}
+
+\clearpage
+
+\printglossaries
+
+\printbibliography
+
+
+
 \end{document}
-%%  ==================================================================
-%%  End document

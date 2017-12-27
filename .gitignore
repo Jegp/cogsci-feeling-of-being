@@ -1,0 +1,12 @@
+*.swp
+main.aux
+main.bbl
+main.bcf
+main.blg
+main.glg
+main.glo
+main.gls
+main.glsdefs
+main.ist
+main.log
+main.run.xml
