@@ -6,11 +6,32 @@
 \usepackage{palatino}
 \usepackage{hyperref}
 \usepackage{csquotes}
+%linespacing
+\usepackage{setspace}
+\renewcommand{\baselinestretch}{1.5} 
+
 % Bibliography
 \usepackage[style=authoryear]{biblatex}
 \addbibresource{bib.bib}
 \bibliography{bib}
 
+% Promote sections and subsections
+\setheadfoot{\onelineskip}{2\onelineskip}
+\setheaderspaces{*}{1mm}{*}
+% \chapterstyle{plain} % needed?
+\checkandfixthelayout
+
+\renewcommand{\thesection}{\arabic{section}}
+\makeatletter
+\let\l@section\l@chapter
+\makeatother
+
+\renewcommand{\thesection}{\arabic{section}}
+\renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
+\makeatletter
+\let\l@subsection\l@section
+\let\l@section\l@chapter
+\makeatother
 
 % Glossary
 \usepackage[numberedsection=nameref]{glossaries}
@@ -124,16 +145,13 @@ a mental state}
     \vspace*{-1cm}
     \textbf{\Huge Feeling of being} \\
     \vspace*{2.5cm} \\
-    \textbf{\Huge Dimensionality of consciousness} \\
+    \textbf{\Huge Consciousness as memes and vectors} \\
     \vspace*{.1cm} \\
-    {\huge On measuring experience} \\
+    {\huge Analysing consciousness bottom-up and top-down} \\
     \begin{tabbing}
     % adjust the hspace below for the longest author name
     Jens Egholm Pedersen \hspace{1cm} \= \texttt{<xtp778@alumni.ku.dk>} \\
-    \\[2cm]
-    \textbf{\Large Abstract} \\
-    Modern developments ...
-    \\[6cm]
+    \\[11cm]
 
     \textbf{\Large Supervisor} \\
     Claudia Carrara-Augustenborg \hspace{1cm} \texttt{<claudia.augustenborg@psy.ku.dk>} \\
@@ -144,7 +162,7 @@ a mental state}
 %%  ==================================================================
 %%  End title page
 
-\chapter{Introduction}
+\section{Introduction}
 \Gls{consciousness} remains an elusive concept despite extensive scrutiny
 from many traditions \autocite{sep-consciousness}. Philosophy of mind,
 neuroscience, psychology and - recently - computer science have been
@@ -153,7 +171,7 @@ prodding the concept from a plenitude of angles.
 many of the disciplines and approaches involved in the quest to explain
 \gls{consciousness} so far \autocite{sep-consciousness}.}
 This endeavour is paramount to understanding the human condition, but
-raises unavoidable and highly intricate existential questions
+raises unavoidable and intricate existential questions
 \autocite{amodei2016, soares2016}.
 
 
@@ -169,8 +187,8 @@ or reductionism.}
 
 The advances and sheer amount of details neuroscience and neuroimaging
 techniques led \textcite{atkinson2000} to call for more detailed theories
-that identifies \textit{neural correlates of consciousness (\gls{ncc})}
-\autocite{atkinson2000}. That call was answered by a plethora of theories
+that identifies \textit{neural correlates of consciousness (\gls{ncc})}.
+That call was answered by a plethora of theories
 that attempted to infer frameworks, on which novel understandings of
 consciousness could be based.\footnote{There are far too many relevant
 and interesting papers to list here, but to just mention a few influential examples,
@@ -201,46 +219,256 @@ drastically aid the understanding of consciousness, provided that the
 paradigm of neuroscience and computer science find common footing through
 \gls{ncc}s. Such a denominator is required because the very definition of
 computation depends on a formally defined input before any meaningful output
-can be given \autocite{Nilsson2009, schmidhuber2014} (see also glossary on
+can be given \autocite{Nilsson2009, schmidhuber2014} (see glossary on
 page \pageref{glos}).
 
 Despite the extensive research into \gls{ncc} there is of yet no 'smoking gun'
 proving the exact link from neural systems to consciousness
-\autocite{sep-consciousness, Hohwy2009, dennett2017}. 
+\autocite{sep-consciousness, Hohwy2009, dennett2017}. Many interesting
+candidates and perspectives that already accounts for much clinical evidence exist
+however.
 
 This essay attempts to follow the advice of \textcite{Hohwy2009}, who advocates
 a broader approach to finding \gls{ncc}. Armed with Richard Dawkins' concept of
 \textit{\gls{meme}}s \autocite{dennett2017}
 and Geoffrey Hintons idea of \textit{\gls{tv}s} \autocite{goh2017}, alternative
-conceptualisations of \gls{ncc}s are scrutinized using existing theoretical
-frameworks of consciousness.
+conceptualisations of \gls{ncc}s are briefly scrutinized through the lenses of two
+contemporary theoretical frameworks for consciousness: global workspace theory by
+\textcite{baars2005} and the information integration theory by \textcite{Tononi2004}.
 
+Before proceeding, the reader should be aware that
+consciousness in this essay exclusively relates to the \textit{hard} problem of inner experience as
+coined by \cite{chalmers1995}, also known as phenomenological consciousness (see glossary on page \pageref{glos}).
 
-Before proceeding, the reader should be aware of this essay
-consciousness will exclusively relate to the \textit{hard} problem of inner experience as
-coined by \cite{chalmers1995}, also known as phenomenological consciousness.
-\section{Vectors and dimensionality}
-what for
-how come
+\section{Memes and thought vectors}
+Assuming an evolutionary viewpoint, any theory of consciousness will have to explain
+its added value to evolutional fitness\footnote{Referred by some as \textit{teleofunctionalism} as an opposition to
+functionalism, where pain, for instance, would not be seen as a function on the same level
+as a limb.} as well as its evolutionary path to achieve that outcome \autocite{dennett2017}. Dennett calls these
+the \textit{what for} and \textit{how come} questions, and employs them rigorously on his
+journey to explain the concept of consciousness. It requires several layers of indirection to
+grasp the evolutionary path to the complex concept of the mind, especially in order to
+explain how it could arise in its present form, given the harsh and ruthless principle of natural selection. For this
+purpose Dennett invites Dawkins' idea of a \gls{meme}: \enquote{a kind of way of behaving ... that
+can be copied, transmitted, remembered, taught, shunned, denounced, brandished ...}
+\autocite{dennett2017}. Memes fill the gap between the age of simple organisms and complex
+\textit{talking} lifeforms because they are able to answer both the \textit{what for} and
+\textit{how come} of how language can evolve gradually.
 
-\section{Alternative approaches}
-Common for each contribution is a fundamental desire to deepen the
-understanding of both consciousness as a concept, and the principles
-partaking in the creation of the concept. 
-Guided by years of academic training and tradition, each discipline have
-approached this \gls{top-down} by, in abstract terms, describing 
-or \gls{bottom-up} \autocite{sep-consciousness},
-: either constructing abstract
-frameworks \autocite{block2007,kouider2010} or 
+Instead of requiring a fully functional
+uttered word to achieve any form of meaning in an evolutionary context, memes can explain why
+thoughts and concepts gained attraction in the race of life: they offer the aid of abstraction
+that drastically increases the ability to survive \autocite{dennett2017}. Briefly speaking
+a meme is a tool for the brain, just like a hammer is a tool for the body. And like a hammer,
+a meme will exist in many variations. Like genetic mutations a large share of those will
+be useless, or maybe even harmful, but a fraction will prove to increase the fitness of
+the organism carrying the meme, thus ensuring its own survival\footnote{Interestingly
+enough this makes memes able to compete for fitness and survival, giving them some form
+of autonomy.}
 
-A raw and unguided tour de force into AI void of any form of human consciousness or
-ethics is hardly desirable, and, putting the moral existential and moral dilemmas aside,
-these advancements further stresses the search for \gls{ncc}s.
+According to the theory of memes an adult brain is then infected with countless memes with
+one common denominator: long history of keeping the adult (and the adults lineage) alive.
+Consciousness exists amidst all this chaos not as a product, but as a by-product to the
+communication between and within the memes themselves \autocite{dennett2017}.
 
-\gls{top-down} \textit{and} \gls{bottom-up} \autocite{dehaene2001, baars2005}
-\section{Convergent theory}
+From the perspective of computer science a \gls{meme} is an algorithm: a stepwise solution
+to a problem, that can take variation and eventualities into consideration 
+\autocite{Nilsson2009, russel2007}. Algorithms in computer science are formalised and described
+to great lengths, and have shown to be able to execute in many different computing substrates
+\autocite{Nilsson2009}. All algorithms have inputs in one form or another that completely
+determine
+the behaviour of the code. Such a list of inputs is also known as a vector and can be 
+of arbitrary length. 
 
-Some researchers even call for new experimental approaches, because the current 
+The recent developments in machine learning is largely relying on vectors to input, transport
+and output data \autocite{russel2007}. Such complex learning models are comprised of many smaller
+algorithms who, also, depend on vectors. If one were to run a complicated learning model and 
+freeze it in time, all the vectors could be captured as a `snapshot' of the model in time.
+In other words the model can be represented as a large number of vectors at any given point
+in time, only to be resumed, repeated or halted at the whim of the creator \autocite{Nilsson2009}.
+
+This `snapshot' idea has led the deep-learning researcher Geoffrey Hinton at Google to
+contemplate a
+similar vector for the human mind that would be able to fully capture the state of a consciousness
+at a point in time\autocite{goh2017}. Hinton did not further elaborate the idea,
+but the technique to take `snapshots' of algorithm is widespread
+within the machine learning community \autocite{russel2007}.
+
+Considering memes as algorithms reduces them to a ``black box`` which takes some input
+and returns some behaviour. This could, as well as any algorithm, be captured using vectors,
+allowing the memes to become the embodiment of the thought vector of the brain. In that light
+memes are formalized abstractions for the brain, capable
+of executing specified desired behaviour in a highly complex world. Further, this
+behaviour does not simply happen out of nowhere, but can be rigorously described in
+mathematical terms by capturing all the ``\textit{thought vectors}'' of each individual
+\gls{meme} and sub-meme.
+
+\section{The search for NCC}
+Guided by years of academic training and tradition, numerous disciplines
+have approached the problem of consciousness \gls{top-down} by, in abstract
+terms, describing frameworks (like the global workspace theory) 
+or \gls{bottom-up} by establishing concepts that can scale to cover abstract
+ideas like consciousness \autocite{sep-consciousness}.
+
+The problem with both approaches is that they require a leap of faith in at
+least one direction. Bottom-up approaches are forced to mobilise immense methodological
+frameworks to establish the connection to something as complicated at phenomenology
+and qualia \autocite{sep-consciousness}. Top-down perspectives needs to ratify their
+ideas towards the growing corpus of clinical data using some sort of measure that relates
+to the higher-order concept, essentially looking for a problem that fits their solution
+\autocite{sep-consciousness}.
+
+\section{Testing memes}
+The likelihood of solving the puzzle from one direction alone is slim
+\autocite{sep-consciousness, Hohwy2009}.
+
+\textcite{Hohwy2009} argues that further progress in the search for \gls{ncc} requires
+new approaches to the study of consciousness. He suggests that future work
+``targets the presumably causal, mechanistic interplay between content processing and
+overall conscious state'' \autocite[p. 436]{Hohwy2009}.
+
+\Gls{meme}s started in practice many million years ago as simple concepts to help the survivability of simpler
+organisms, but ended as complicated models and generalisations to assist in navigating and sense-
+making in a fast-paced world of constant abstract communication \autocite{dennett2017}.
+Drawing upon this, memes can to a large extend be seen as the building blocks for our minds.
+Without abstractions to understand collections of items and words humans would never
+function in a modern society. 
+
+According to Dennett \gls{meme}s pervades our lives and defines our very language and,
+by extension, our mental models with which we see the world \autocite{dennett2017}. If
+that is indeed the case it should be examined closer from both perspectives: \gls{top-down} and
+\gls{bottom-up}.
+
+\textcite{baars2005} and \textcite{Tononi2004} each posited their own influential theories of
+consciousness, representing top-down and bottom-up approaches respectively.
+In the following both theories will be assessed in the light of memes and thought
+vectors to test its applicability in both domains.
+
+\subsection{Global workspace theory}
+\textcite{baars2005} suggests that consciousness exists in a \textit{workspace} of the
+brain, whose contents ``activate widespread regions in brain'' \autocite[p.52]{baars2005}.
+Baars uses examples from neuroscience on sensory consciousness, working memory, attention
+and coma to explain how they all fit with the idea of one large canvas that concerts
+many complicated modules to form a unified notion of self.
+
+Baars emphasises that the global workspace enables multiple networks to communicate
+with each other in order to solve tasks in concert \autocite{baars2005}. Within his
+framework then, is an understanding of vertical complexity, ranging from simpler brain
+modules to higher-order conglomerates. This is in line with Dawkins' idea of memes as
+a multi-layered and recursive construct, where memes can encompass other memes
+\autocite{dennett2017}.
+
+Baars writes that his global workspace theory ``may be thought of as a theater
+of mental functioning'', where only one spot on the stage is active at a time
+\autocite[p. 46]{baars2005}. The sensory cortices can be activated internally
+to perform unconscious processing which, when the signal is strong enough,
+triggers a conscious `audience'. Together with S. Franklin, this has even
+been implemented as a computer model \autocite{baars2005}, which aligns with 
+the computational idea to consciousness of the thought vector approach. 
+
+The global workspace theory emphasises computation and empirical evidence to 
+a degree that it is hard to shoot down, while at the same time being too diffuse
+in its terms to provide any straightforward methods to falsify its theories.
+It remains to be seen, for example, in what way the decentralised information is
+gathered in the workspace and what effect that has on consciousness.
+
+Based on the clinical information for the global workspace theory, it is hard
+to find significant differences between it and the memes. Both theories operate
+on a high level, although Baars seem to elude the specific questions when
+it comes to the practicalities of putting his theory to the test.
+
+\subsection{Information integration theory}
+Tononi proposes an alternate theory on what consciousness is and how it occurs. He attacks
+it by attempting to solve the problem of how to measure consciousness \autocite{Tononi2004}.
+Tononi starts out by defining a
+measure for how well information is integrated in a network ($\Phi$)
+\footnote{By 
+\textit{integrated} he refers to how effective information can be relayed and made mutually 
+available in a network \autocite{Tononi2004} }
+\autocite{Tononi2004}. \\
+He then proceeds to equate this information
+integration measure with consciousness and proves its saliency by testing it with
+several empirical observations.
+
+Tononi writes out the equation for $\Phi$ and thus formalises his theory mathematically.
+This aligns with the computational paradigm where even complicated concepts can be
+reduced to its discrete constituents. However such a single measure for the 'experience'
+of consciousness resonates badly with the multifaceted view of memes. If our
+consciousness were to consist of many (competing) memes that constantly fight for
+the right to survive, consciousness itself would equal more than just the sum of
+its integrated parts.
+
+The approach to memes would also be sceptical to the notion that consciousness scales
+with the amount of information. Rather, consciousness would scale with the
+efficacy of the memes to construct the side-effect that consciousness (according
+to the theory of memes) is. Both perspectives seems to be able to explain the 
+neurological evidence mentioned in \textcite{Tononi2004}. To mention a few from the 
+memes point of view, split-brain
+patients will inevitably experience competing signals since memes per
+definition are competing, and the evidence pointing to consciousness in a
+distributed thalamocortical network (instead of a single cortical area) can easily
+be explained by memes being inherently decentralised (although higher functions
+is assumed to happen in the youngest parts of the brain) \autocite{dennett2017, Tononi2004}.
+
+The basic building block of Tononi's theory (information) is consistent with the
+thought-vector approach to \gls{meme}s where the information is simply just algorithmic
+instructions. However, Tononi never explicitly defines what comprises information in
+his article, so the might be unseen discrepancies. On the higher level the theories
+start to diverge, perhaps because Tononi does not describe the concepts to great detail.
+If the information integration theory is taken to the extreme as presented in the article,
+the two theories will likely diverge due to the inherent methodological collectivism
+in (recurrent) \gls{meme}s.
+
+\section{Discussion}
+Merging the idea of memes with the idea of a thought vector allows for a method 
+to approach the idea of higher-level thought, without losing any of the formalism required to
+test the theory in practice. This became apparent during the brief examination of
+\textcite{Tononi2004} and \textcite{baars2005}, because the theory offered valid
+explanations (alternative or aligning) in both cases. Instead of defining a top-down 
+or bottom-up concept (like $\Phi$) and scaling it to explain clinical evidences, memes
+bridge the gap between the ``non-thinking'' and
+``thinking'' substrates by offering a series of stepping stones. 
+
+Rather than dismissing the points of Tononi, memes offers counterproposals that are
+significantly easier to test in practice. By sticking to a model where memes
+must be autonomous entities with an algorithmic formalisation, memes have an
+advantage to many other theories in the literature that have proven near impossible
+to verify or falsify \autocite{sep-consciousness}.
+
+The weakness of the theory lies in the vagueness of memes. While it seems more feasible
+to formalise the definition of a meme than any other higher-level cognitive theory,
+it still remains to be seen how such a definition will look like. It is also not
+proven whether the current mathematical cool is capable of expressing the memes to 
+a satisfying degree (what is algorithmic steps for a brain?).
+Similar to the `minimally
+sufficient' condition for consciousness to occur (see glossary on \gls{ncc}) a neural
+correlation of memes (NCM) is urgently required.
+Although the problem is arguably not as big as finding \gls{ncc}.
+
+\section{Conclusion}
+This essay merged the idea of memes with the notion of thought vectors and briefly
+applied the concepts to two influential theories of consciousness: global workspace
+theory and integrated information theory.
+
+The analysis only scratched the surface of a century old and abstruse subject, but
+provided nonetheless a reason for optimism. It was shown that 1) memes can explain parts
+of the neurological evidence from the literature, that 2) memes were largely compatible
+with the views presented by both \textcite{baars2005} and \textcite{Tononi2004} with 
+some added nuances
+and finally that 3) memes offer both a \gls{top-down} and \gls{bottom-up} perspective.
+
+The last point is especially interesting because our most powerful computing substrate
+(silicon transistors) are excellent \gls{bottom-up} machines, but are ineffective at
+abstracting to a level where \gls{top-down} processing is feasible. Memes
+allow computational substrate to bootstrap this high-level way of 
+\textit{comprehension}, and may be a way to empower computational machines with
+the ability to finally adopt new perspectives and augment our capability for
+\gls{top-down} thinking - and eventually our consciousness.
+
+A raw and unguided tour de force into AI, void of any form of human consciousness or
+ethics, is hardly desirable and the advancements in deep learning further stresses
+the search for a proven theory of conscious and \gls{ncc}s.
+
 \clearpage
 
 \printglossary[Glossary]
